@@ -2,7 +2,7 @@
 
 A demo application made with Filament (TALLkit for Laravel).
 
-![](https://raw.githubusercontent.com/PyaeSoneAungRgn/organic-cms/main/ScreenShot.png)
+![](https://raw.githubusercontent.com/PyaeSoneAungRgn/organic_cms/main/ScreenShot.png)
 
 ## Demo
 [https://organic-cms.pyaesoneaung.dev](https://organic-cms.pyaesoneaung.dev/)
