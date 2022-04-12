@@ -33,11 +33,23 @@ class CustomerResource extends Resource
                         Forms\Components\Grid::make()
                             ->schema([
                                 Forms\Components\TextInput::make('name')
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                                 Forms\Components\TextInput::make('email')
                                     ->email()
-                                    ->required(),
-                                Forms\Components\TextInput::make('phone'),
+                                    ->required()
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
+                                Forms\Components\TextInput::make('phone')
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                                 Forms\Components\Textarea::make('address')
                                     ->rows(3)
                                     ->columnSpan(2)

@@ -41,17 +41,33 @@ class ProductResource extends Resource
                                     ->reactive()
                                     ->afterStateUpdated(function (Closure $set, $state) {
                                         $set('slug', str()->slug($state));
-                                    }),
+                                    })
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                                 Forms\Components\TextInput::make('slug')
                                     ->disabled()
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                                 Forms\Components\BelongsToSelect::make('category_id')
                                     ->relationship('category', 'name')
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                                 Forms\Components\TextInput::make('quantity')
                                     ->numeric()
                                     ->integer()
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                                 Forms\Components\Toggle::make('sell_on_market'),
                                 Forms\Components\RichEditor::make('description')
                                     ->toolbarButtons([
@@ -93,7 +109,7 @@ class ProductResource extends Resource
             ])
             ->columns([
                 'sm' => 3,
-                'lg' => null
+                'md' => null
             ]);
     }
 

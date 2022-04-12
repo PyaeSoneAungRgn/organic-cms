@@ -36,10 +36,18 @@ class OrderResource extends Resource
                                 Forms\Components\TextInput::make('order_id')
                                     ->default('OG-' . random_int(100000, 999999))
                                     ->disabled()
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'lg' => 1
+                                    ]),
                                 Forms\Components\BelongsToSelect::make('customer_id')
                                     ->relationship('customer', 'name')
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'lg' => 1
+                                    ]),
                                 Forms\Components\RichEditor::make('note')
                                     ->toolbarButtons([
                                         'blockquote',
@@ -68,18 +76,27 @@ class OrderResource extends Resource
                                     ->required()
                                     ->reactive()
                                     ->afterStateUpdated(fn ($state, callable $set) => $set('unit_price', Product::find($state)?->getSalePrice() ?? 0))
-                                    ->columnSpan(2),
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 2
+                                    ]),
                                 Forms\Components\TextInput::make('quantity')
                                     ->numeric()
                                     ->integer()
                                     ->required()
-                                    ->columnSpan(1),
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                                 Forms\Components\TextInput::make('unit_price')
                                     ->postfix('KS')
                                     ->numeric()
                                     ->disabled()
                                     ->required()
-                                    ->columnSpan(1),
+                                    ->columnSpan([
+                                        'default' => 2,
+                                        'md' => 1
+                                    ]),
                             ])
                             ->dehydrated()
                             ->defaultItems(1)
