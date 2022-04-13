@@ -22,3 +22,7 @@ npm run dev
 php artisan migrate
 php artisan setup:program
 ```
+
+## Credits
+
+[Filament Demo App](https://github.com/laravel-filament/demo)
