@@ -31,6 +31,7 @@ class ProductResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                     ->columnSpan([
+                        'default' => 3,
                         'sm' => 2
                     ])
                     ->schema([
@@ -105,12 +106,12 @@ class ProductResource extends Resource
                         Forms\Components\DateTimePicker::make('discount_start_at'),
                         Forms\Components\DateTimePicker::make('discount_end_at'),
                     ])
-                    ->columnSpan(1),
+                    ->columnSpan([
+                        'default' => 3,
+                        'sm' => 1
+                    ]),
             ])
-            ->columns([
-                'sm' => 3,
-                'md' => null
-            ]);
+            ->columns(3);
     }
 
     public static function table(Table $table): Table
