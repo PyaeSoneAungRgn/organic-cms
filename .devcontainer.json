@@ -1,0 +1,14 @@
+{
+  "name": "Laradock",
+  "dockerComposeFile": "../docker-compose.yml",
+  "remoteUser": "laradock",
+  "runServices": [
+    "nginx",
+    "mysql",
+    "redis"
+  ],
+  "service": "workspace",
+  "workspaceFolder": "/var/www",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "uname -a"
+}
