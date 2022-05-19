@@ -1,6 +1,6 @@
 {
-  "name": "Laradock",
-  "dockerComposeFile": "laradock/docker-compose.yml",
+  "name": "OrganicCms",
+  "dockerComposeFile": "./laradock/docker-compose.yml",
   "remoteUser": "laradock",
   "runServices": [
     "nginx",
